@@ -43,7 +43,6 @@ snake-and-ladders/
     ├── board.js      ← Board grid, SVG drawing, token movement
     ├── game.js       ← Game state, turns, move logic
     ├── ui.js         ← DOM rendering, animations, screen management
-    └── main.js       ← App entry point
 ```
 
 ---
