@@ -4,7 +4,7 @@
 ---
 
 ## 🎮 Live Demo
-👉 [Click here to play!](https://Pooja-Vo3.github.io/snake-and-ladders)
+👉 [Click here to play!](https://Pooja-V03.github.io/snake-and-ladders)
 
 ---
 
@@ -37,8 +37,7 @@
 snake-and-ladders/
 ├── index.html        ← 3 screens: Mode, Setup, Game
 ├── README.md
-├── css/
-│   └── style.css     ← All styling & animations
+├── style.css         ← All styling & animations
 └── js/
     ├── config.js     ← Constants, snakes & ladders positions
     ├── board.js      ← Board grid, SVG drawing, token movement
