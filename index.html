@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snake & Ladders</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="deco" style="top:6%;left:4%;animation-duration:7s">🌸</div>
+  <div class="deco" style="top:12%;right:5%;animation-duration:9s;animation-delay:1s">🎀</div>
+  <div class="deco" style="bottom:15%;left:6%;animation-duration:8s;animation-delay:2s">✨</div>
+  <div class="deco" style="bottom:22%;right:4%;animation-duration:10s;animation-delay:0.5s">🌷</div>
+
+  <div class="header">
+    <h1>🐍 SNAKE &amp; LADDERS 🐍</h1>
+
+  </div>
+
+  <!-- SCREEN 1: Mode -->
+  <div class="screen active" id="screenMode">
+    <div class="mode-grid">
+      <div class="mode-card" onclick="UI.selectMode('single')">
+        <span class="mode-emoji">🤖</span>
+        <div class="mode-title">SINGLE PLAYER</div>
+        <div class="mode-desc">You vs Computer.</div>
+      </div>
+      <div class="mode-card" onclick="UI.selectMode('multi')">
+        <span class="mode-emoji">👯</span>
+        <div class="mode-title">MULTIPLAYER</div>
+        <div class="mode-desc">2 to 4 players, same screen!</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN 2: Setup -->
+  <div class="screen" id="screenSetup">
+    <div class="setup-box">
+      <div class="setup-title" id="setupTitle">PLAYER SETUP</div>
+      <div class="count-row" id="countRow">
+        <span class="count-label">PLAYERS:</span>
+        <button class="count-btn" onclick="UI.changeCount(-1)">−</button>
+        <span class="count-display" id="countDisplay">2</span>
+        <button class="count-btn" onclick="UI.changeCount(+1)">+</button>
+      </div>
+      <div class="players-list" id="playersList"></div>
+      <button class="start-btn" onclick="UI.startGame()">START GAME! 🎲</button>
+      <br/>
+      <button class="back-btn" onclick="UI.goBack()">← BACK</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 3: Game -->
+  <div class="screen" id="screenGame">
+    <div class="win-overlay" id="winOverlay">
+      <div class="win-modal">
+        <span class="win-emoji" id="winEmoji">🏆</span>
+        <div class="win-title" id="winTitle">YOU WIN!</div>
+        <p class="win-sub" id="winSub">Congrats!</p>
+        <button class="win-btn" onclick="UI.playAgain()">PLAY AGAIN? 🎲</button>
+      </div>
+    </div>
+    <div class="game-wrapper">
+      <div class="card board-card">
+        <div class="board-wrap">
+          <div class="board" id="board"></div>
+          <svg id="boardSvg" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
+      </div>
+      <div class="side-panel">
+        <div class="card">
+          <div class="card-title">♡ Players</div>
+          <div id="playersPanel"></div>
+        </div>
+        <div class="card" style="text-align:center">
+          <div class="card-title">🎲 Dice</div>
+          <div class="turn-label" id="turnLabel">— —</div>
+          <span class="dice-face" id="diceFace">⚀</span>
+          <button class="roll-btn" id="rollBtn" onclick="UI.handleRoll()" disabled>ROLL DICE ✦</button>
+        </div>
+        <div class="card">
+          <div class="card-title">📜 Log</div>
+          <div class="log-scroll" id="gameLog"></div>
+        </div>
+        <div class="card">
+          <div class="card-title">🗺 Legend</div>
+          <div class="legend-grid">
+            <div class="legend-item"><div class="l-dot" style="background:#f87171"></div>Snake 🐍</div>
+            <div class="legend-item"><div class="l-dot" style="background:#4ade80"></div>Ladder 🪜</div>
+          </div>
+          <div id="tokenLegend" style="margin-top:8px;display:flex;flex-direction:column;gap:5px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/board.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
